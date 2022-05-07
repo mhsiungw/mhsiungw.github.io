@@ -1,0 +1,180 @@
+/********************
+vars **************/
+:root {
+  --background-blue: #dee0df;
+  --background-white: #fefefe;
+  --primary-blue: #3b4157;
+  --secondary-blue: #979ca2;
+  --primary-orange: #d18c7d;
+  --secondary-orange: #e9c7c5;
+  --deco-border-width: 30rem;
+}
+
+/********************
+reset **************/
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+a,
+a:visited,
+a:focus {
+  position: relative;
+  color: var(--primary-blue);
+  text-decoration: none;
+}
+
+a::after {
+  content: '';
+  display: block;
+  position:absolute;
+  width: 100%;
+  height: .5px;
+  background-color: var(--primary-blue);
+}
+
+a:hover::after {
+  height: 100%;
+}
+
+.container {
+  position: relative;
+  width: 1250px;
+  min-height: 100vh;
+  margin: 0 auto;
+  display: flex;
+}
+
+.container::after,
+.container::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 0;
+  height: 0; 
+}
+
+.container::before {
+  border-style: solid;
+  border-width: var(--deco-border-width);
+  border-color: transparent transparent var(--primary-blue) transparent;
+  transform: rotate(-45deg);
+  left: -30rem;
+  top: -30rem;
+  z-index: 10;
+}
+
+.container::after {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 200px 0px 0 128rem;
+  border-color: var(--secondary-blue) transparent transparent transparent;
+  right: 0;
+}
+
+/********************
+header **************/
+
+.header {
+  background-color: var(--background-blue);
+  padding: 14rem 4rem;
+  color: var(--primary-blue);
+  font-weight: 600;
+  flex-basis: 40%;
+}
+
+
+.header .avatar {
+  position: relative;
+  display: inline-block;
+  width: 25rem;
+  height: 25rem;
+  border-radius: 100%;
+  object-fit: cover;
+  z-index: 20;
+}
+
+.header .skills__section .skills__list {
+  margin-bottom: 1.8rem;
+}
+
+.header .skills__section .skills__list h3 {
+  margin-left: 1rem;
+  margin-bottom: 1rem;
+}
+
+.header .skills__section .skills__list ul {
+  margin-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.header .contact .contact__list {
+  margin-left: 1rem;
+  margin-top: 0.8rem;
+}
+
+.header .contact .contact__list li {
+  margin-bottom: 0.8rem;
+}
+
+/********************
+main ***************/
+section .title {
+  color: var(--primary-blue);
+}
+
+
+section:not(:nth-child(1)) .title {
+  margin-bottom: .5rem;
+}
+
+section .title ~ * {
+  margin-left: 1rem;
+  color: var(--primary-blue);
+  margin-bottom: 1rem;
+}
+
+.main {
+  flex-grow: 1;
+  padding: 18rem 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  background-color: var(--background-white);
+}
+
+.main .name__section .title {
+  font-size: 7.5rem;
+}
+
+.main .name__section .position {
+  color: var(--secondary-blue);
+  font-size: 3.5rem;
+  margin-left: 5ch;
+}
+
+.main .portfolio__section .portfolio__links {
+  display:flex;
+  gap: .5rem;
+}
